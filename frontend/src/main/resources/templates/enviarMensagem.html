@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Enviar Mensagem</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <h1>Enviar Mensagem</h1>
+    <form
+      action="#"
+      th:action="@{'/mensagem/enviar/{id}'(id=${contato.id})}"
+      th:object="${contato}"
+      th:method="post"
+    >
+      <label for="nome">Nome</label>
+      <input type="text" th:field="*{nome}" id="nome" placeholder="Nome" />
+      <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+      <br />
+
+      <input type="submit" value="Enviar mensagem" />
+    </form>
+    <br />
+  </body>
+</html>

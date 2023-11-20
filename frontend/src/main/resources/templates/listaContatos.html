@@ -35,7 +35,7 @@
             </form>
           </td>
           <td class="align-middle">
-            <form action="#" th:action="@{'/contato/enviar/{id}'(id=${contato.id})}" th:method="put">
+            <form action="#" th:action="@{'/mensagem/enviar/{id}'(id=${contato.id})}" th:method="post">
               <button type="submit" class="btn">Enviar mensagem</button>
             </form>
           </td>
